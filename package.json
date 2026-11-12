@@ -1,0 +1,61 @@
+{
+  "name": "apple-imei-utils",
+  "version": "0.1.0",
+  "description": "Small, dependency-free Apple IMEI and part-number utilities.",
+  "license": "MIT",
+  "author": "iUnlockMobile",
+  "homepage": "https://iunlockmobile.com/articles/how-to-find-carrier-on-iphone-before-unlock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minerelx168-sketch/apple-imei-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/minerelx168-sketch/apple-imei-utils/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs/references.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test test/api.test.mjs test/cjs-smoke.test.cjs",
+    "pack:check": "npm run build && npm pack --dry-run"
+  },
+  "devDependencies": {
+    "typescript": "5.7.3"
+  },
+  "keywords": [
+    "imei",
+    "luhn",
+    "checksum",
+    "apple",
+    "part-number",
+    "typescript",
+    "offline"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
